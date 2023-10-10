@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/accounts"
+        android:visible="false">
+        <item
+            android:id="@+id/nav_add_account"
+            android:icon="@drawable/baseline_add_24"
+            android:title="@string/add_account" />
+    </group>
+
+    <group
+        android:id="@+id/general"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_create_group"
+            android:icon="@drawable/baseline_group_24"
+            android:title="@string/create_group" />
+
+        <item
+            android:id="@+id/nav_secret_chat"
+            android:icon="@drawable/loc"
+            android:title="@string/create_secret_chat" />
+
+        <item
+            android:id="@+id/nav_create_channel"
+            android:icon="@drawable/baseline_speaker_notes_24"
+            android:title="@string/create_channel" />
+
+        <item
+            android:id="@+id/nav_contacts"
+            android:icon="@drawable/baseline_contacts_24"
+            android:title="@string/contacts" />
+
+        <item
+            android:id="@+id/nav_calls"
+            android:icon="@drawable/baseline_local_phone_24"
+            android:title="@string/calls" />
+
+        <item
+            android:id="@+id/nav_saves"
+            android:icon="@drawable/baseline_bookmark_24"
+            android:title="@string/saves" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/baseline_settings_24"
+            android:title="@string/settings" />
+    </group>
+
+    <group
+        android:id="@+id/other"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_invite_friends"
+            android:icon="@drawable/baseline_person_add_24"
+            android:title="@string/invite_friends" />
+
+        <item
+            android:id="@+id/nav_questions"
+            android:icon="@drawable/baseline_question_mark_24"
+            android:title="@string/questions" />
+    </group>
+</menu>

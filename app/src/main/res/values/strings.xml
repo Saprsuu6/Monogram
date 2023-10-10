@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Monogram</string>
+    <string name="telegram_title">Telegram</string>
+    <string name="img_description">Description</string>
+
+    <!--    Side navigation menu-->
+    <string name="add_account">Add account</string>
+    <string name="create_group">Create group</string>
+    <string name="create_secret_chat">Create secret chat</string>
+    <string name="create_channel">Create channel</string>
+    <string name="contacts">Contacts</string>
+    <string name="calls">Calls</string>
+    <string name="saves">Saves</string>
+    <string name="settings">Settings</string>
+    <string name="invite_friends">Invite friends</string>
+    <string name="questions">Telegram questions</string>
+
+    <!--    Top navigation menu-->
+    <string name="search">Search</string>
+
+    <string name="name_template">Andrew</string>
+    <string name="nick_template">\@Mafiosi</string>
+    <string name="phone_template">+38 (063) 983 03 17</string>
+    <string name="online_template">Online</string>
+
+    <!--    Settings groups-->
+    <string name="account_group">Account</string>
+    <string name="change_number_hint">Click here to change number</string>
+    <string name="nick_hint">Username</string>
+    <string name="about_self">About you</string>
+    <string name="about_self_hint">Write some about you</string>
+
+    <string name="notification">Notifications and sounds</string>
+    <string name="confidentiality">Confidentiality</string>
+    <string name="data_and_memory">Data and memory</string>
+    <string name="chat_settings">Chat settings</string>
+    <string name="devices">Devices</string>
+
+    <string name="hello_blank_fragment_settings">Hello settings</string>
+    <string name="hello_blank_fragment_chats">Hello chats</string>
+
+    <string name="menu_chats">Chats</string>
+    <string name="menu_settings">Settings</string>
+</resources>
