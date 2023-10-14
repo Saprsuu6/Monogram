@@ -1,4 +1,4 @@
-package com.example.monogram.ui.chats
+package com.example.monogram.ui
 
 import com.example.monogram.R
 import com.example.monogram.ui.BaseFragment

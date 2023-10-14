@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/chats"
-        android:name="com.example.monogram.ui.chats.ChatsFragment"
+        android:name="com.example.monogram.ui.ChatsFragment"
         android:label="@string/menu_chats"
         tools:layout="@layout/fragment_chats" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.monogram.ui.settings.SettingsFragment"
+        android:name="com.example.monogram.ui.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings">
         <argument

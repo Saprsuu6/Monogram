@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/enterPhoneFragment">
+
+    <fragment
+        android:id="@+id/enterPhoneFragment"
+        android:name="com.example.monogram.ui.authentication.EnterPhoneFragment"
+        android:label="fragment_enter_phone"
+        tools:layout="@layout/fragment_enter_phone" >
+        <action
+            android:id="@+id/action_enterPhoneFragment_to_enterCodeFragment2"
+            app:destination="@id/enterCodeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterCodeFragment2"
+        android:name="com.example.monogram.ui.authentication.EnterCodeFragment"
+        android:label="fragment_enter_code_freagment"
+        tools:layout="@layout/fragment_enter_code_freagment" >
+        <action
+            android:id="@+id/action_enterCodeFragment2_to_enterPhoneFragment"
+            app:destination="@id/enterPhoneFragment" />
+    </fragment>
+</navigation>

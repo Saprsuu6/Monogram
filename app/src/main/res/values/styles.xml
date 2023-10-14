@@ -9,7 +9,7 @@
 
     <style name="Theme.Monogram.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.Monogram.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.Monogram.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar" />
 
     <style name="SimpleText_bold_settings" parent="TextAppearance.AppCompat">
         <item name="android:textSize">20sp</item>

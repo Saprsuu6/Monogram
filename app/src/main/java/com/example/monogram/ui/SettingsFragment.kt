@@ -1,18 +1,22 @@
-package com.example.monogram.ui.settings
+package com.example.monogram.ui
 
 import android.app.Activity
 import android.content.Intent
 import android.graphics.ImageDecoder
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.example.monogram.R
 import com.example.monogram.User
 import com.example.monogram.databinding.FragmentSettingsBinding
-import com.example.monogram.ui.BaseFragment
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     private lateinit var user: User
@@ -33,6 +37,17 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         user = args.user
+
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.owner_context, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return true
+            }
+        })
     }
 
     override fun onStart() {

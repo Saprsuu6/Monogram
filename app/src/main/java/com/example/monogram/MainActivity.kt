@@ -1,8 +1,8 @@
 package com.example.monogram
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.Menu
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +22,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.monogram.databinding.ActivityMainBinding
 import com.example.monogram.databinding.NavHeaderMainBinding
-import com.example.monogram.ui.chats.ChatsFragmentDirections
+import com.example.monogram.ui.ChatsFragmentDirections
 import com.google.android.material.navigation.NavigationView
 
 
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private val user = User()
     private var isOpenContextOwner = false
+    private var isAuthorized = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,14 +43,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
-
         hideSystemUi()
-        initNavigation()
 
-        setDefaultInfo()
-        setSideNavigationListeners()
-        ownerContextMenu()
-        changeTheme()
+        if (isAuthorized) {
+            setDefaultInfo()
+            setSideNavigationListeners()
+            ownerContextMenu()
+            changeTheme()
+
+            initNavigation()
+        } else {
+            val intentAuthentication = Intent(this, AuthenticationActivity::class.java)
+            startActivity(intentAuthentication)
+        }
     }
 
     private fun setSideNavigationListeners() {
@@ -82,8 +88,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_settings -> {
-                    //supportActionBar?.setHomeAsUpIndicator(R.drawable.baseline_menu_24)
-                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
                     val action = ChatsFragmentDirections.actionChatsToNavSettings(user)
                     navController.navigate(action)
                     true
@@ -178,10 +182,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        menuInflater.inflate(R.menu.main, menu)
+//        return true
+//    }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
